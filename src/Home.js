@@ -78,12 +78,11 @@ function Home() {
     setLoading(false);
     const newArray = contacts.map((item) => {
       if (item.id === updatedData.id) {
-        console.log("INSIDE");
         const updatedContact = {
           id: updatedData.id,
           ...updatedData,
         };
-        console.log("TTTTTTT", updatedContact);
+        // console.log( updatedContact);
         return updatedContact;
       }
       return item;
@@ -147,40 +146,6 @@ function Home() {
         </div>
       )}
 
-      {/* <ul>
-        {contacts.map((contact, index) => {
-          return (
-            <li key={index} className="contact">
-              <div className="info">
-                <div>
-                  <span className="name">Name:</span>
-                  {contact.name}
-                </div>
-                <div>
-                  <span className="email">Email:</span>
-                  {contact.email}
-                </div>
-
-                <div>
-                  <span className="phone">Phone:</span>
-                  {contact.phone}
-                </div>
-
-                <div>
-                  <span className="city">Website:</span>
-                  {contact.website}
-                </div>
-              </div>
-              <div className="buttons">
-                <button>Update</button>
-                <button onClick={() => deleteContact({ id: contact.id })}>
-                  Delete
-                </button>
-              </div>
-            </li>
-          );
-        })}
-      </ul> */}
       {contacts?.map((contact) => (
         <Contact
           key={contact.id}
